@@ -14,9 +14,9 @@ public class Main {
 		do {
 
 			System.out.println("Escolha qual Classe deseja ver: " + "\n1.Produto" + "\n2.Curso" + "\n3.Rede Social"
-					+ "\n4.Conta Bancaria" + "\n5.Arquivo" + "\n6.Aula" + "\n7.Avaliação" + "\n8.Projeto" + "\n9.Jogo"
-					+ "\n10.Usuário" + "\n11.Aplicativo" + "\n12.Cliente" + "\n13.Sistema Operacional" + "\n14.Tarefa"
-					+ "\n15.Relatorio" + "\n0.Sair");
+					+ "\n4.Conta Bancaria" + "\n5.Arquivo" + "\n6.Aula" + "\n7.Avaliação" + "\n8.Pedido" + "\n9.Projeto"
+					+ "\n10.Jogo" + "\n11.Usuário" + "\n12.Aplicativo" + "\n13.Cliente" + "\n14.Sistema Operacional"
+					+ "\n15.Tarefa" + "\n16.Relatorio" + "\n0.Sair");
 
 			op = scanner.nextInt();
 
@@ -148,40 +148,42 @@ public class Main {
 				newAvaliacao.divulgarResultado();
 				break;
 			case 8:
+				Pedido novoPedido = new Pedido();
+
+				novoPedido.idPedido = 100;
+				novoPedido.produtoPedido = "Notebook";
+				novoPedido.nmCliente = "Carlos";
+				novoPedido.statusPedido = "ABERTO";
+				novoPedido.descricaoPedido = "Notebook HQ com i5, 8GB RAM, SSD 256GB";
+
+				novoPedido.criarPedido();
+				System.out.println("-".repeat(35));
+
+				novoPedido.buscarPedido();
+				System.out.println("-".repeat(35));
+
+				novoPedido.cancelarPedido();
+				break;
+
+			case 9:
 				Projeto newProjeto = new Projeto();
 
 				newProjeto.criarProjeto();
 				newProjeto.editarDados();
 				newProjeto.alterarEstado();
 				break;
-			case 9:
+
+			case 10:
 				Jogo newJogo = new Jogo();
 
 				newJogo.nomeJogo = "The Sims";
-				newJogo.descricaoJogo = "\nCurta o poder de criar e controlar pessoas num mundo virtual onde não há regras. \nSeja poderoso e livre, divirta-se e jogue com a vida!";
-				newJogo.generoJogo = "Aventura, Casual, Simulação, Gratuitos para Jogar";
-				newJogo.objetivoJogo = "Controlar a vida dos personagens (Sims) e levar eles a evoluírem como você quiser.";
-				newJogo.regrasJogo = "\n⚙️ Regras principais do The Sims\n" + "1. Necessidades dos Sims\n" + "\n"
-						+ "Fome, energia, higiene, diversão, social, etc.\n" + "\n"
-						+ "Se ignorar → o Sim sofre consequências (desmaia, morre, etc.)\n" + "\n"
-						+ "2. Tempo é contínuo\n" + "\n" + "O jogo roda em tempo simulado\n" + "\n"
-						+ "Sims envelhecem, trabalham em horários fixos, eventos acontecem\n" + "\n"
-						+ "3. Dinheiro limitado\n" + "\n" + "Você começa com um valor\n" + "\n"
-						+ "Precisa trabalhar ou ganhar dinheiro pra sobreviver\n" + "\n"
-						+ "Tudo custa (casa, comida, objetos)\n" + "\n" + "4. Ações têm consequências\n" + "\n"
-						+ "Decisões afetam:\n" + "\n" + "Humor\n" + "\n" + "Relacionamentos\n" + "\n" + "Carreira\n"
-						+ "\n" + "5. Progressão por habilidades\n" + "\n"
-						+ "Sims evoluem habilidades (cozinhar, lógica, etc.)\n" + "\n"
-						+ "Isso desbloqueia novas ações e oportunidades\n" + "\n" + "6. Regras sociais\n" + "\n"
-						+ "Interações podem:\n" + "\n" + "Melhorar relações\n" + "\n" + "Gerar brigas\n" + "\n"
-						+ "Relacionamentos influenciam gameplay\n" + "\n" + "7. Morte e falha\n" + "\n"
-						+ "Sims podem morrer (fome, fogo, etc.)\n" + "\n"
-						+ "Não é “game over” tradicional, mas impacta o jogo";
+
 				newJogo.iniciarJogo();
 				newJogo.executarMecanicas();
 				newJogo.finalizarJogo();
 				break;
-			case 10:
+
+			case 11:
 				Usuario newUsuario = new Usuario();
 
 				newUsuario.nomeUsuario = "Jurandir da Silva";
@@ -193,7 +195,8 @@ public class Main {
 				newUsuario.autenticarConta();
 				newUsuario.editarConta();
 				break;
-			case 11:
+
+			case 12:
 				Aplicativo app = new Aplicativo();
 
 				app.nome = "Amazon";
@@ -208,7 +211,7 @@ public class Main {
 				app.iniciar();
 				break;
 
-			case 12:
+			case 13:
 				Cliente cliente = new Cliente();
 
 				cliente.cpf = "984.627.762-07";
@@ -217,7 +220,7 @@ public class Main {
 				System.out.println("Cliente: " + cliente.cpf);
 				break;
 
-			case 13:
+			case 14:
 				SistemaOperacional sis = new SistemaOperacional();
 
 				sis.proprietario = "Microsoft";
@@ -232,7 +235,7 @@ public class Main {
 				sis.instalar();
 				break;
 
-			case 14:
+			case 15:
 				Tarefa tarefa = new Tarefa();
 
 				tarefa.prazo = "2 dias";
@@ -247,7 +250,7 @@ public class Main {
 				tarefa.gerando();
 				break;
 
-			case 15:
+			case 16:
 				Relatorio rel = new Relatorio();
 
 				rel.titulo = "Sistema";
