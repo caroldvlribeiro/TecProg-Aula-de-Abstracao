@@ -14,7 +14,7 @@ public class Main {
 		do {
 
 			System.out.println("Escolha qual Classe deseja ver: " + "\n1.Produto" + "\n2.Curso" + "\n3.Rede Social"
-					+ "\n4.Conta Bancaria" + "\n5.Arquivo" + "\n6.Aula" + "\n7.Avaliação" + "\n0.Sair");
+					+ "\n4.Conta Bancaria" + "\n5.Arquivo" + "\n6.Aula" + "\n7.Avaliação" + "\n8.Projeto" + "\n9.Jogo" + "\n10.Usuário" + "\n0.Sair");
 
 			op = scanner.nextInt();
 
@@ -145,7 +145,88 @@ public class Main {
 
 				newAvaliacao.divulgarResultado();
 				break;
-
+			case 8:
+				Projeto newProjeto = new Projeto();
+				
+				newProjeto.criarProjeto();
+				newProjeto.editarDados();
+				newProjeto.alterarEstado();
+				break;
+			case 9:
+				Jogo newJogo = new Jogo();
+				
+				newJogo.nomeJogo = "The Sims";
+				newJogo.descricaoJogo = "\nCurta o poder de criar e controlar pessoas num mundo virtual onde não há regras. \nSeja poderoso e livre, divirta-se e jogue com a vida!";
+				newJogo.generoJogo = "Aventura, Casual, Simulação, Gratuitos para Jogar";
+				newJogo.objetivoJogo = "Controlar a vida dos personagens (Sims) e levar eles a evoluírem como você quiser.";
+				newJogo.regrasJogo = "\n⚙️ Regras principais do The Sims\n"
+						+ "1. Necessidades dos Sims\n"
+						+ "\n"
+						+ "Fome, energia, higiene, diversão, social, etc.\n"
+						+ "\n"
+						+ "Se ignorar → o Sim sofre consequências (desmaia, morre, etc.)\n"
+						+ "\n"
+						+ "2. Tempo é contínuo\n"
+						+ "\n"
+						+ "O jogo roda em tempo simulado\n"
+						+ "\n"
+						+ "Sims envelhecem, trabalham em horários fixos, eventos acontecem\n"
+						+ "\n"
+						+ "3. Dinheiro limitado\n"
+						+ "\n"
+						+ "Você começa com um valor\n"
+						+ "\n"
+						+ "Precisa trabalhar ou ganhar dinheiro pra sobreviver\n"
+						+ "\n"
+						+ "Tudo custa (casa, comida, objetos)\n"
+						+ "\n"
+						+ "4. Ações têm consequências\n"
+						+ "\n"
+						+ "Decisões afetam:\n"
+						+ "\n"
+						+ "Humor\n"
+						+ "\n"
+						+ "Relacionamentos\n"
+						+ "\n"
+						+ "Carreira\n"
+						+ "\n"
+						+ "5. Progressão por habilidades\n"
+						+ "\n"
+						+ "Sims evoluem habilidades (cozinhar, lógica, etc.)\n"
+						+ "\n"
+						+ "Isso desbloqueia novas ações e oportunidades\n"
+						+ "\n"
+						+ "6. Regras sociais\n"
+						+ "\n"
+						+ "Interações podem:\n"
+						+ "\n"
+						+ "Melhorar relações\n"
+						+ "\n"
+						+ "Gerar brigas\n"
+						+ "\n"
+						+ "Relacionamentos influenciam gameplay\n"
+						+ "\n"
+						+ "7. Morte e falha\n"
+						+ "\n"
+						+ "Sims podem morrer (fome, fogo, etc.)\n"
+						+ "\n"
+						+ "Não é “game over” tradicional, mas impacta o jogo";
+				newJogo.iniciarJogo();
+				newJogo.executarMecanicas();
+				newJogo.finalizarJogo();
+				break;
+			case 10:
+				Usuario newUsuario = new Usuario();
+				
+				newUsuario.nomeUsuario = "Jurandir da Silva";
+				newUsuario.contatoUsuario = "jurandir@email.com";
+				newUsuario.tipoUsuario = "Cliente";
+				newUsuario.identificadorPublicoUsuario = "Jurandir";
+				
+				newUsuario.criarConta();
+				newUsuario.autenticarConta();
+				newUsuario.editarConta();
+				break;
 			case 0:
 				System.out.println("Encerrando programa...");
 				break;
